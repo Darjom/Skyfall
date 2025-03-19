@@ -1,0 +1,85 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Crea un nuevo grupo {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/custom/custom.css">
+{% endblock stylesheets %}
+{% block content %}
+
+     <!-- Page content -->
+  <div class="container mt-6 pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-11 col-sm-11">
+        <div class="card bg-secondary shadow border-0">
+          <div class="card-header bg-transparent pb-5">
+
+            <div class="text-muted text-center mt-2 mb-3">
+
+              <br />
+              {% if msg %}
+                <span class="text-danger">{{ msg | safe }}</span>
+                  <a class="col-12" href="{{ url_for('home_blueprint.index') }}">Ir a mis grupos</a>
+              {% else %}
+                Crear un nuevo grupo
+              {% endif %}
+            </div>
+
+          </div>
+          <div class="card-body px-lg-5 py-lg-5">
+
+            {% if not success %}
+
+              <form role="form" method="post" action="">
+
+                {{ form.hidden_tag() }}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group mb-3">
+                                  <div class="input-group input-group-alternative">
+                                    {{ form.nombre(placeholder="Nombre del grupo",class="form-control") }}
+                                  </div>
+                                </div>
+                            </div>
+                            <!-- Aqui ira un textarea con 3 rows, placeholder, id unico -->
+                            <div class="col-12">
+                                <div class="form-group mb-3">
+                                  <div class="input-group input-group-alternative">
+                                    {{ form.descripcion(placeholder="Descripcion del grupo",class="form-control", rows="3", id="descripcion") }}
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top" src="/static/assets/img/Temp/bg/crea_tu_grupo.png" alt="Card image cap">
+
+                    </div>
+
+                    <div class="col-md-6 d-flex justify-content-between align-items-center">
+                        <div class="text-center">
+                          <button type="submit" name="create" class="btn btn-primary my-4">Crear</button>
+                        </div>
+                        <div class="text-center">
+                          <a href="{{ url_for('home_blueprint.index') }}" class="btn btn-danger my-4">Cancelar</a>
+                        </div>
+                    </div>
+
+                </div>
+              </form>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+{% endblock javascripts %}

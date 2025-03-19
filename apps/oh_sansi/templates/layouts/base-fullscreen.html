@@ -1,0 +1,88 @@
+<!--
+=========================================================
+* Turistic Guide Dashboard - v1.2.0
+=========================================================
+* Product Page: https://www.deplooymentsoftware.com/product/Turistic Guide-dashboard
+
+* Copyright  Jaro-Hub (http://www.deplooymentsoftware.com)
+* Coded by www.deplooymentsoftware.com
+=========================================================
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="canonical" href="https://appseed.us/admin-dashboards/flask-boilerplate-dashboard-Turistic Guide">
+  
+  <title>
+    Flask Turistic Guide Dashboard - {% block title %} Open-Source Admin Panel {% endblock %} | JARO-Hub
+  </title>
+
+  <link rel="icon" href="/static/assets/img/brand/favicon.ico" >
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href="/static/assets/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <!-- Turistic Guide CSS -->
+    <link rel="stylesheet" href="/static/assets/css/argon.css?v=1.2.0" type="text/css">
+
+  <!-- Specific CSS goes HERE -->
+  {% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+
+<body class="bg-default">
+
+  <div class="main-content">
+
+    {% include "includes/navigation-fullscreen.html" %}
+
+
+    <!-- Header -->
+    <div class="header py-7">
+      <div class="container">
+        <div class="header-body text-center">
+          <div class="row justify-content-center">
+            <!-- Breadcrumbs -->
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb" style="background: transparent; padding: 1rem 0; color: #fff;">
+                  {% for crumb in breadcrumbs %}
+                    {% if crumb.active %}
+                        <!-- Si el elemento tiene "active" en True, se muestra como texto simple -->
+                        <li class="breadcrumb-item active" aria-current="page" style="color: #aaa;">{{ crumb.name }}</li>
+                    {% else %}
+                        <li class="breadcrumb-item"><a href="{{ crumb.url }}" style="color: #fff;">{{ crumb.name }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+    
+    {% block content %}{% endblock content %}
+
+    {% include "includes/footer-fullscreen.html" %}
+
+  </div>
+    
+  {% include "includes/scripts.html" %}
+
+  <!-- Specific JS goes HERE --> 
+  {% block javascripts %}{% endblock javascripts %}
+  
+  <script src="/static/assets/js/argon.js?v=1.2.0"></script>
+
+</body>
+
+</html>

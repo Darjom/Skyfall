@@ -1,0 +1,105 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Sobre nosotros {% endblock title %}
+
+{% block content %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/custom/custom.css">
+{% endblock stylesheets %}
+
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Sobre nosotros</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">Sobre nosotros</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sobre nosotros</li>
+              </ol>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0">
+            <h3 class="mb-0">Deployment Software</h3>
+          </div>
+          <!-- Light table -->
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+              </thead>
+            </table>
+              <div class="row" style="padding:50px">
+
+                <div class="col-md-4">
+                    <div class="container_img" id="DeploymentImg">
+                <img src="/static/assets/img/theme/Deployment.jpg"/>
+                    </div>
+                </div>
+                  <div class="col-md-8">
+                      <h1>Acerca de nosotros</h1>
+<p align="center">
+    Deployment Software es un equipo de talentosos desarrolladores web compuesto por Julian Ortiz, Daniel Reque y Raid Montaño. Unidos por una pasión común, hemos combinado nuestros conocimientos y habilidades para abordar los retos más desafiantes en el mundo del desarrollo digital.
+Nuestro camino como equipo comenzó en una hackaton, donde enfrentamos intensos desafíos y consolidamos nuestra sinergia como grupo. Desde ese entonces, hemos trabajado en proyectos que no solo desafían nuestra capacidad técnica, sino también nuestra creatividad y determinación.
+    Estamos orgullosos de ser los responsables detrás del diseño y funcionalidad del sitio web del Departamento de Física.</p>
+                  </div>
+                  <div class="row p-8">
+                  <div class="col-md-8">
+                      <p align="center">
+                          Este proyecto refleja nuestro compromiso con la excelencia y nuestra habilidad para adaptarnos a diferentes temáticas y necesidades.
+                      Con un año de experiencia trabajando juntos, hemos logrado consolidar un flujo de trabajo eficiente y armónico, permitiendo la entrega de soluciones web a tiempo y con altos estándares de calidad. Nuestra especialización en desarrollo web nos permite ofrecer soluciones modernas, intuitivas y eficientes para una variedad de necesidades y públicos.
+                      En Deployment Software, creemos que la colaboración, el compromiso y la constante actualización de nuestras habilidades son esenciales para ofrecer el mejor servicio a nuestros clientes y socios.
+                      </p>
+                  </div>
+                  <div class="col-md-4">
+                      <img src="/static/assets/img/theme/MayorSanSimon.png" class="w-75">
+                  </div>
+                  </div>
+            </div>
+          </div>
+          <!-- Card footer -->
+
+        </div>
+      </div>
+    </div>
+    <!-- Dark table -->
+    <div class="container p-3 bg-primary text-center">
+                    <div class="form-country">
+                        <select class="city-select2 p-4" id="city" name="state">
+                            <option ></option>
+                            <option value="5">Argentina</option>
+                            <option value="2">Brasil</option>
+                            <option value="3">Colombia</option>
+                            <option value="4">Ecuador</option>
+                            <option value="1">Bolivia</option>
+                            <option value="6">Chile</option>
+                            <option value="7">Guayana</option>
+                            <option value="8">Peru</option>
+                            <option value="9">Surinam</option>
+                            <option value="10">Uruguay</option>
+                            <option value="11">Venezuela</option>
+                        </select>
+                    </div>
+                </div>
+
+    {% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

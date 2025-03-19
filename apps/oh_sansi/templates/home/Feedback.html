@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% extends 'layouts/base.html' %}
+
+{% block title %} Feedback {% endblock title %}
+
+{% block content %}
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/custom/custom.css">
+{% endblock stylesheets %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+</head>
+<body>
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Feedback</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Feedback</li>
+              </ol>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0">
+            <h3 class="mb-0">Deja tu comentario</h3>
+          </div>
+          <!-- Light table -->
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+              </thead>
+            </table>
+              <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <form>
+                            <h5>Nombres:</h5>
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Alex Juan">
+                      </div>
+                            <h5>Apellidos:</h5>
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Menendez Ramos">
+                      </div>
+                            <h5>Email:</h5>
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+                      </div>
+                            <h5>Comentario:</h5>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escriba su comentario aqui" placeholder="Mi principal queja es/duda/consulta"></textarea>
+                        </form>
+                        <div class="altura"></div>
+                        <button class="btn btn-success">Enviar</button>
+                        <div class="altura"></div>
+                    </div>
+                    <div class="col-md-4"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+
+</body>
+{% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}
+
+</html>

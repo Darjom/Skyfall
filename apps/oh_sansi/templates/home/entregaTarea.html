@@ -1,0 +1,127 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Tables {% endblock title %}
+
+{% block content %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/custom/custom.css">
+{% endblock stylesheets %}
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">DescripcionPais</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">descripcionPais</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Entrega Tarea</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0">
+            <h3 class="mb-0">Entrega Tarea</h3>
+          </div>
+          <!-- Light table -->
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="sort" data-sort="name">Nombre de la clase</th>
+                  <th scope="col" class="sort" data-sort="tarea">Nombre de tarea</th>
+                  <th scope="col" class="sort" data-sort="status">Estado</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <tr>
+                  <th scope="row">
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <span class="name mb-0 text-sm">Fisica</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="tarea">
+                    Ejercicios tema 1
+                  </td>
+
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <span class="name mb-0 text-sm">Activo</span>
+                      <div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+                    <div class="row h-25 ">
+                        <div class="col-md-6">
+                            <form method="POST" action="/subir_pdf" enctype="multipart/form-data">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-4">
+                                        <input class ="btn btn-default" type="file" name="archivo_pdf">
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-4  center">
+                                        <input class ="btn btn-primary" type="submit" value="Subir PDF">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                        Objetivo: El objetivo de esta tarea es que los estudiantes demuestren su comprensión de los conceptos de Movimiento Rectilíneo Uniforme (MRU) y Movimiento Rectilíneo Uniformemente Variado (MRUV), así como su capacidad para aplicar estas ideas en situaciones del mundo real.
+
+Instrucciones:
+
+    Introducción Teórica: Comienza por proporcionar una breve introducción teórica a los conceptos de MRU y MRUV. Explica las ecuaciones fundamentales, las diferencias entre los dos tipos de movimiento y cómo se representan gráficamente.
+
+    Ejercicio de MRU: Proporciona una situación hipotética o un ejemplo del mundo real en el que un objeto se mueva en MRU. Pide a los estudiantes que calculen la distancia recorrida, la velocidad promedio y el tiempo requerido para completar el movimiento. Puedes incluir datos reales, como un automóvil viajando a velocidad constante por una carretera recta.
+
+    Ejercicio de MRUV: Presenta otra situación en la que un objeto se mueva en MRUV. Pide a los estudiantes que determinen la aceleración, la velocidad inicial, la velocidad final y la distancia recorrida. Puedes utilizar un ejemplo de un objeto en caída libre o un objeto bajo la influencia de una fuerza constante.
+
+    Comparación y Análisis: Luego, pide a los estudiantes que comparen y contrasten los resultados y las características de los dos movimientos. ¿Qué diferencias y similitudes observaron en los cálculos y gráficos? ¿Qué implica una aceleración constante en términos de cambios en la velocidad y la distancia recorrida?
+
+    Aplicación Práctica: Para finalizar, solicita a los estudiantes que apliquen su comprensión de MRU y MRUV a un escenario de la vida real de su elección. Pueden describir un ejemplo de MRU o MRUV que hayan observado en su entorno o investigado por su cuenta. Luego, deben analizar y presentar los cálculos relevantes y las implicaciones de dicho escenario.
+
+Entrega y Evaluación:
+
+Los estudiantes deben entregar sus respuestas en un informe que incluya cálculos, gráficos, análisis y una explicación clara de sus resultados. La tarea será evaluada en función de la precisión de los cálculos, la comprensión de los conceptos, la capacidad de comparar y contrastar MRU y MRUV, y la aplicación a situaciones del mundo real.
+
+Esta tarea permitirá a los estudiantes demostrar su dominio de los conceptos de MRU y MRUV, así como su capacidad para aplicar estos conocimientos en contextos prácticos, lo que es esencial en el estudio de la física básica.
+                  </div>
+            </div>
+          </div>
+          <!-- Card footer -->
+
+        </div>
+      </div>
+    </div>
+    <!-- Dark table -->
+
+
+    {% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}
