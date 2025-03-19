@@ -1,0 +1,73 @@
+
+{% extends 'layouts/base.html' %}
+
+{% block title %} Crea un nuevo grupo {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/custom/custom.css">
+{% endblock stylesheets %}
+{% block content %}
+    <div class="container mt-6 pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-11 col-sm-11">
+        <div class="card bg-secondary shadow border-0">
+
+          <div class="card-body px-lg-5 py-lg-5">
+
+            <div class="table-responsive">
+    <div>
+        <table class="table align-items-center">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">
+                        Tarea
+                    </th>
+                    <th scope="col">
+                        Descripcion
+                    </th>
+                    <th scope="col">
+                        Fecha limite
+                    </th>
+
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="list">
+                {% for tarea in tareas %}
+                <tr>
+                    <th scope="row" class="name">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="mb-0 text-sm">{{ tarea.titulo}}</span>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="budget">
+                        <div class="media-body">
+                            <span class="mb-0 text-sm">{{ tarea.descripcion}}</span>
+                        </div>
+                    </td>
+                    <td class="fecha_limitada">
+                        <span class="badge badge-dot mr-4">
+                          <i class="bg-warning"></i> {{ tarea.fecha_limite }}
+                        </span>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+{% endblock javascripts %}

@@ -1,0 +1,77 @@
+{% extends 'layouts/base-fullscreen.html' %}
+
+{% block title %} Name Turistic {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/custom/custom.css">
+{% endblock stylesheets %}
+{% block content %}
+
+    <div class="container container-blog mt-5">
+        <div class="row">
+            <!-- Columna de la imagen del poster -->
+            <div class="col-md-4 pt-7 container_img">
+                <img src="{{ turistic[0].imagen_url }}" class="img-fluid rounded" alt="{{ turistic[0].nombre }}">
+            </div>
+            <!-- Columna del contenido -->
+            <div class="col-md-8 pt-5 mt-6">
+                <h2>{{ turistic[0].nombre }}</h2>
+                <!-- Iframe de YouTube para el video -->
+                <div class="embed-responsive embed-responsive-16by9 mb-3">
+                    <iframe src="{{ turistic[0].video_url }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <!-- Detalles de la película -->
+                <p><strong>GENERO:</strong> {{ turistic[0].genero }}</p>
+                <p><strong>CLASIFICACION:</strong> {{ turistic[0].clasificacion }}</p>
+                <p><strong>DURACION:</strong> {{ turistic[0].duracion }}</p>
+                <p><strong>ESTRENO:</strong> {{ turistic[0].estreno }}</p>
+                <p><strong>PROTAGONISTAS:</strong> {{ turistic[0].protagonistas }}</p>
+                <p><strong>DIRECTOR:</strong> {{ turistic[0].director }}</p>
+                <p><strong>SINOPSIS:</strong> {{ turistic[0].sinopsis }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 mb-2" id="container_all_coment">
+
+
+            <!-- columna realizar comentario -->
+        <div class="row">
+                <div class="col-sm">
+
+                  <form method="POST" action="/procesar">
+                      <br>
+                      <div class="col-sm">
+                        <textarea class="form-control form-control-alternative" rows="3" name="comentario" placeholder="Escribe un comentario aqui ..."></textarea>
+                      </div>
+                <br>
+                <div class ="col-sm" >
+                    <div style="float: right;">
+                        <button class="btn btn-icon btn-3 btn-primary" type="submit">
+                        <span class="btn-inner--icon"><i class="ni ni-send text-Default"></i></span>
+                        <span class="btn-inner--text">Comentar</span>
+                        </button>
+                    </div>
+                </div>
+                </form>
+                 </div>
+        </div>
+            <!-- columna comentario -->
+            <div class="pt-4 pb">
+                <div id="container_coment" class="pt-3 pb-3">
+                    <div class="col-sm">
+                        <strong>Nombre de Usuario</strong>
+                        <div id="comentario">Comentario por diseño</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pb-5"></div>
+    </div>
+
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+{% endblock javascripts %}

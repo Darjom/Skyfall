@@ -1,0 +1,137 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Tables {% endblock title %}
+
+{% block content %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/custom/custom.css">
+{% endblock stylesheets %}
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">DescripcionPais</h6>
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">descripcionPais</a></li>
+                <li class="breadcrumb-item active" aria-current="page">DescripcionPais</li>
+              </ol>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header border-0">
+            <h3 class="mb-0">Información de país</h3>
+          </div>
+          <!-- Light table -->
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="sort" data-sort="name">Nombre del país</th>
+                  <th scope="col" class="sort" data-sort="capital">Capital</th>
+                  <th scope="col" class="sort" data-sort="status">Moneda</th>
+                  <th scope="col" class="sort" data-sort="completion">Población</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <tr>
+                  <th scope="row">
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <span class="name mb-0 text-sm">Bolivia</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="capital">
+                    Sucre
+                  </td>
+
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <span class="name mb-0 text-sm">Boliviano</span>
+                      <div>
+                      </div>
+                    </div>
+                  </td>
+
+                    <td>
+                    <div class="d-flex align-items-left">
+                      <span class="name mb-0 text-sm">Aprox. 11 millones.</span>
+                      <div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+                    <div class="row h-25">
+                        <div class="col-sm-12 pr-5">
+                            <button class="btn btn-icon btn-2 btn-outline-default favoritos p-3" type="button">
+	                        <span class="btn-inner--icon"><i class="ni ni-favourite-28 text-red"></i></span>
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="container_img">
+                        <img src="/static/assets/img/theme/Bolivia.jpg"/>
+                    </div>
+                </div>
+                  <div class="col-md-6">
+                      Geografía:
+Bolivia es un país sin litoral, limitando al norte y al este con Brasil, al sur con Paraguay y Argentina, y al oeste con Chile y Perú. Su geografía es muy diversa:
+
+Altiplano: Una meseta de alta montaña que incluye la ciudad de La Paz y el famoso lago Titicaca.
+Yungas y Amazonía: Selvas y llanuras tropicales en el norte y este de Bolivia.
+Valles: Zonas templadas, que incluyen ciudades como Cochabamba y Sucre.
+Chaco: Una región árida y calurosa en el sureste.
+Historia:
+
+Bolivia fue parte del Imperio Incaico antes de la llegada de los españoles en el siglo XVI.
+Se independizó de España en 1825 y fue nombrada en honor a Simón Bolívar, un líder clave en la lucha por la independencia sudamericana.
+Ha tenido una historia política inestable, con numerosos golpes y cambios de gobierno.
+Cultura:
+
+Bolivia tiene una rica mezcla de culturas indígenas, mestizas y europeas.
+Es conocida por sus festivales, como el Carnaval de Oruro, que es Patrimonio de la Humanidad.
+Tiene una rica tradición en música, danza, artesanía y cocina.
+Economía:
+
+La economía de Bolivia ha estado tradicionalmente basada en la minería (especialmente estaño y plata), pero en años recientes, el gas natural y el petróleo han tomado un papel importante.
+La agricultura también es un sector clave, incluyendo productos como la quinua, soya, café y cacao.
+Sitios de Interés:
+
+Salar de Uyuni: El salar más grande del mundo, conocido por su impresionante paisaje que parece un espejo gigante durante la temporada de lluvias.
+Lago Titicaca: El lago navegable más alto del mundo, compartido con Perú.
+Tiahuanaco: Un sitio arqueológico preincaico cerca de La Paz.
+                  </div>
+            </div>
+          </div>
+          <!-- Card footer -->
+
+        </div>
+      </div>
+    </div>
+    <!-- Dark table -->
+
+
+    {% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}

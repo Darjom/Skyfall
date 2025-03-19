@@ -1,0 +1,70 @@
+
+.container-blog {
+    background-color: #f6f9fc;
+    max-width: 100%!important;
+}
+
+.container_img {
+    position: relative;
+    height: 27rem;
+}
+
+.container_img img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 255px;
+    left: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.09);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.favoritos{
+    float: right;
+    position: relative;
+}
+.container-blog-faqs {
+    background-color: #f6f9fc;
+}
+#container_all_coment{
+background-color:  #f6f9fc;
+    border-radius: 10px
+}
+#container_coment {
+    background-color: #e9ecef;
+    border-radius: 10px;
+}
+
+.altura{
+    height: 10px;
+}
+alturab{
+    height: 50px;
+}
+
+
+.imagendeployment{
+    height: inherit;
+    border-radius: 50%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.imagenbolivia{
+    height: inherit;
+    object-fit: cover;
+    width: 100%;
+}
+
+/** ------start::Custom Select2 */
+.select2-container .select2-selection--single {
+    height: 50px!important;
+}
+/** ------end::Custom Select2 */

@@ -1,0 +1,50 @@
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+  <div class="scrollbar-inner">
+    <!-- Brand -->
+    <div class="sidenav-header  align-items-center">
+      <a class="navbar-brand" href="/">
+        <img src="/static/assets/img/brand/blue.png" class="navbar-brand-img" alt="Turistic Guide Design - Jinja Template Logo.">
+      </a>
+    </div>
+    <div class="navbar-inner">
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Nav items -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link {% if 'index' in segment %} active {% endif %}" href="/">
+              <i class="ni ni-shop text-primary"></i>
+              <span class="nav-link-text">Inicio</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="/profile.html">
+              <i class="ni ni-single-02 text-primary"></i>
+              <span class="nav-link-text">Perfil</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="/">
+              <i class="ni ni-glasses-2 text-primary"></i>
+              <span class="nav-link-text">Grupos</span>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link {% if 'faqs' in segment %} active {% endif %}" href="/faqs.html">
+              <i class="ni ni-satisfied text-primary"></i>
+              <span class="nav-link-text">Clases</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="ni ni-user-run text-primary"></i>
+              <span class="nav-link-text">Cerrar Sesión</span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</nav>
