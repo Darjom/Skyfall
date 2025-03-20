@@ -3,7 +3,7 @@
 .idea
 .python-version
 bin
-
+venv
 db.sqlite3
 .env
 .env.prod
