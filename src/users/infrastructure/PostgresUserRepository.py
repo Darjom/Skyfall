@@ -1,3 +1,8 @@
+from src.users.domain.User import User
+from src.users.domain.UserRepository import UserRepository
+from src.users.infrastructure.persistence.UserMapping import UserMapping
+
+
 class PostgresUserRepository(UserRepository):
     def __init__(self, db_session):
         self.db_session = db_session

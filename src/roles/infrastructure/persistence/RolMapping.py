@@ -1,6 +1,10 @@
-# src/roles/infrastructure/persistence/RoleMapping.py
-
 from apps import db
+
+roles_permissions = db.Table(
+    'roles_permissions',
+    db.Column('role_id', db.Integer, db.ForeignKey('role.id'), primary_key=True),
+    db.Column('permission_id', db.Integer, db.ForeignKey('permission.id'), primary_key=True)
+)
 
 class RolMapping(db.Model):
     __tablename__ = 'role'
@@ -8,10 +12,26 @@ class RolMapping(db.Model):
     name = db.Column(db.String(80), unique=True)
     description = db.Column(db.String(255))
 
+    # Relación muchos a muchos con permisos
+    permissions = db.relationship(
+        'PermissionMapping',
+        secondary=roles_permissions,
+        backref=db.backref('roles', lazy='dynamic')  # 🔹 Lazy loading para eficiencia
+    )
+
     def to_domain(self):
         from src.roles.domain.Rol import Rol
-        return Rol(name=self.name, description=self.description)
+        return Rol(
+            id=self.id,
+            name=self.name,
+            description=self.description,
+            permissions=[permission.to_domain() for permission in self.permissions]  # 🔹 Convertir a objetos completos
+        )
 
     @classmethod
     def from_domain(cls, role_domain):
-        return cls(name=role_domain.name, description=role_domain.description)
+        role_mapping = cls(
+            id=role_domain.id if role_domain.id else None,
+            name=role_domain.name,
+            description=role_domain.description
+        )

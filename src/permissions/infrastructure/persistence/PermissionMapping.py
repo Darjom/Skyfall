@@ -1,8 +1,4 @@
-# permissions/infrastructure/persistence/PermissionMapping.py
-
 from apps import db
-
-
 
 class PermissionMapping(db.Model):
     __tablename__ = 'permission'
@@ -12,8 +8,16 @@ class PermissionMapping(db.Model):
 
     def to_domain(self):
         from src.permissions.domain.Permission import Permission
-        return Permission(name=self.name, description=self.description)
+        return Permission(
+            id=self.id,
+            name=self.name,
+            description=self.description
+        )
 
     @classmethod
-    def from_domain(cls, permission):
-        return cls(name=permission.name, description=permission.description)
+    def from_domain(cls, permission_domain):
+        return cls(
+            id=permission_domain.id if permission_domain.id else None,
+            name=permission_domain.name,
+            description=permission_domain.description
+        )
